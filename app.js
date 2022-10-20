@@ -84,5 +84,49 @@ const letterCounter = (word) => {
   }
 }
 
-let word = prompt('Write your phrase')
-letterCounter(word)
+const sumArray = (numbers) => {
+  let result = 0;
+  for (num of numbers) {
+    result = result + num
+  }
+  return result
+}
+
+const max = (numbers) => {
+  let biggest = numbers[0];
+  for (num of numbers) {
+    if (biggest < num) {
+      biggest = num;
+    }
+  }
+  return biggest
+}
+
+const min = (numbers) => {
+  let smallest = numbers[0];
+  for (num of numbers) {
+    if (num < smallest) {
+      smallest = num;
+    }
+  }
+  return smallest;
+}
+
+const letterFrequency = (phrase) => {
+  let result = {}
+  for (const letter of phrase) {
+    if (letter in result) {
+      result[letter]++
+    } else {
+      result[letter] = 1
+    }
+  }
+  return result
+}
+
+const wordFrequency = (phrase) => {
+  let words = phrase.split(' ')
+  return letterFrequency(words)
+}
+
+console.log(wordFrequency('your momma your is a'))
