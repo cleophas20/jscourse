@@ -65,68 +65,101 @@ fruits.push('watermelon', 'mango')
 //   sum = numbers[i] + numbers[i+1]
 //   sum = numbers[0]
 // }
+//
+//
+let numbers = []
+//
+// let sum = 0
+// let doubles = []
+// for (num of numbers) {
+// //  sum = sum + num
+//   doubles.push(num * 2)
+//
+// }
+let greaterThanArray = []
 
-
-const numbers = [1, 2, 3, 4, 5, 6]
-let sum = 0
-let doubles = []
-for (num of numbers) {
-//  sum = sum + num
-  doubles.push(num * 2)
-
+const filter = (testArray, greaterThan) => {
+  for (num of testArray) {
+    if (num > greaterThan) {
+      greaterThanArray.push(num)
+    }
+  }
+  console.log(greaterThanArray)
 }
+
+
+
+const doubles = (numbers) => {
+  return numbers.map(number => number * 2)
+}
+
+function arrayInput() {
+  let newVar = prompt('Give me a number')
+  let newNum = parseInt(newVar)
+  if (Number.isInteger(newNum)) {
+    numbers.push(newNum)
+    arrayInput()
+  } else  {
+    filter(numbers, 5)
+  }
+}
+
+arrayInput();
+
 //  console.log(doubles)
-
-const letterCounter = (word) => {
-  let count = 0
-  for (letter in word) {
-    console.log(letter)
-  }
-}
-
-const sumArray = (numbers) => {
-  let result = 0;
-  for (num of numbers) {
-    result = result + num
-  }
-  return result
-}
-
-const max = (numbers) => {
-  let biggest = numbers[0];
-  for (num of numbers) {
-    if (biggest < num) {
-      biggest = num;
-    }
-  }
-  return biggest
-}
-
-const min = (numbers) => {
-  let smallest = numbers[0];
-  for (num of numbers) {
-    if (num < smallest) {
-      smallest = num;
-    }
-  }
-  return smallest;
-}
-
-const letterFrequency = (phrase) => {
-  let result = {}
-  for (const letter of phrase) {
-    if (letter in result) {
-      result[letter]++
-    } else {
-      result[letter] = 1
-    }
-  }
-  return result
-}
-
-const wordFrequency = (phrase) => {
-  let words = phrase.split(' ')
-  return letterFrequency(words)
-}
-
-console.log(wordFrequency('your momma your is a'))
+//
+// const letterCounter = (word) => {
+//   let count = 0
+//   for (letter in word) {
+//     console.log(letter)
+//   }
+// }
+//
+// const sumArray = (numbers) => {
+//   let result = 0;
+//   for (num of numbers) {
+//     result = result + num
+//   }
+//   return result
+// }
+//
+// const max = (numbers) => {
+//   let biggest = numbers[0];
+//   for (num of numbers) {
+//     if (biggest < num) {
+//       biggest = num;
+//     }
+//   }
+//   return biggest
+// }
+//
+// const min = (numbers) => {
+//   let smallest = numbers[0];
+//   for (num of numbers) {
+//     if (num < smallest) {
+//       smallest = num;
+//     }
+//   }
+//   return smallest;
+// }
+//
+// const letterFrequency = (phrase) => {
+//   let result = {}
+//   for (const letter of phrase) {
+//     if (letter in result) {
+//       result[letter]++
+//     } else {
+//       result[letter] = 1
+//     }
+//   }
+//   return result
+// }
+//
+// const wordFrequency = (phrase) => {
+//   let words = phrase.split(' ')
+//   return letterFrequency(words)
+// }
+//
+// //console.log(wordFrequency('your momma your is a'))
+//
+//
