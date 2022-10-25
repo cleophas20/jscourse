@@ -107,23 +107,25 @@ function arrayInput() {
 //arrayInput();
 //console.log(result)
 
-const actors = [
-  {name: 'johnny', netWorth: 200},
-  {name: 'amber', netWorth: 10},
-  {name: 'leo', netWorth: 1000}
-]
+// const actors = [
+//   {name: 'johnny', netWorth: 200},
+//   {name: 'amber', netWorth: 10},
+//   {name: 'leo', netWorth: 1000}
+// ]
+//
+// actors.reduce(netWorth)
 
-let actorName = (actors.filter(actor => actor.netWorth > 100))
-
-const sumArray = (numbers) => {
-  let result = 0
-  for (const num of numbers) {
-    result += num
-  }
-  return result
-}
-const bob = [2, 3, 4, 5, 6]
-const sumArrayWithReduce = bob.reduce((prev, curr) => prev + curr)
+// let actorName = (actors.filter(actor => actor.netWorth > 100))
+//
+// const sumArray = (numbers) => {
+//   let result = 0
+//   for (const num of numbers) {
+//     result += num
+//   }
+//   return result
+// }
+// const bob = [2, 3, 4, 5, 6]
+// const sumArrayWithReduce = bob.reduce((prev, curr) => prev + curr)
 
 
 
@@ -190,6 +192,49 @@ function mult(a, b) {
 }
 
 const nums = [1, 2, 3, 4]
-const result = nums.reduce(mult)
+// const result = nums.reduce(mult)
 
-console.log(result)
+const result = nums.reduce((a, b) => a + b, 0)
+
+
+const actors = [
+  {name: 'johnny', netWorth: 200},
+  {name: 'amber', netWorth: 10},
+  {name: 'leo', netWorth: 1000}
+]
+
+const total = actors.reduce((a, b) => a + b.netWorth, 0)
+
+//console.log(total)
+
+let titleDiv = document.getElementById('title')
+let message = 'goodbye'
+
+titleDiv.innerText = message;
+
+titleDiv.innerHTML = `<p>${message}</p>`
+
+titleDiv.style.color = 'green'
+
+let redSquare = document.getElementById('red')
+let yellowSquare = document.getElementById('yellow')
+let greenSquare = document.getElementById('green')
+
+
+const squares = document.querySelectorAll('.colorSquare')
+
+function clicked() {
+  let count = 0;
+  count++;
+  return count;
+}
+
+const timesClicked = {'red': 0, 'yellow': 0, 'green': 0}
+
+squares.forEach(square => {
+  square.onclick = () => {
+    timesClicked[square.value] += 1
+    square.innerText = timesClicked[square.value]
+//    console.log(square.value)
+  }
+})
