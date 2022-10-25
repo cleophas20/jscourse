@@ -222,6 +222,7 @@ let greenSquare = document.getElementById('green')
 
 
 const squares = document.querySelectorAll('.colorSquare')
+const startStop = document.getElementById('startStop')
 
 function clicked() {
   let count = 0;
@@ -238,3 +239,12 @@ squares.forEach(square => {
 //    console.log(square.value)
   }
 })
+
+startStop.onclick = () => clearScores()
+
+function clearScores() {
+  timesClicked.red = 0
+  timesClicked.yellow = 0
+  timesClicked.green = 0
+  squares.forEach(square => square.innerText = '')
+}
