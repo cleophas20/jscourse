@@ -79,14 +79,13 @@ let numbers = []
 let greaterThanArray = []
 
 const filter = (testArray, greaterThan) => {
-  for (num of testArray) {
+  for (const num of testArray) {
     if (num > greaterThan) {
       greaterThanArray.push(num)
     }
   }
-  console.log(greaterThanArray)
+  return greaterThanArray
 }
-
 
 
 const doubles = (numbers) => {
@@ -100,11 +99,33 @@ function arrayInput() {
     numbers.push(newNum)
     arrayInput()
   } else  {
-    filter(numbers, 5)
+    result = numbers.filter(num => num > 6 || num < 2)
+
   }
 }
 
-arrayInput();
+//arrayInput();
+//console.log(result)
+
+const actors = [
+  {name: 'johnny', netWorth: 200},
+  {name: 'amber', netWorth: 10},
+  {name: 'leo', netWorth: 1000}
+]
+
+let actorName = (actors.filter(actor => actor.netWorth > 100))
+
+const sumArray = (numbers) => {
+  let result = 0
+  for (const num of numbers) {
+    result += num
+  }
+  return result
+}
+const bob = [2, 3, 4, 5, 6]
+const sumArrayWithReduce = bob.reduce((prev, curr) => prev + curr)
+
+
 
 //  console.log(doubles)
 //
@@ -163,3 +184,12 @@ arrayInput();
 // //console.log(wordFrequency('your momma your is a'))
 //
 //
+
+function mult(a, b) {
+  return a * b;
+}
+
+const nums = [1, 2, 3, 4]
+const result = nums.reduce(mult)
+
+console.log(result)
