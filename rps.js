@@ -19,46 +19,46 @@ const randomSelect = (myArray) => {
 function rockClick() {
   let roundChoice = randomSelect(computerChoices)
   if (roundChoice == 'rock') {
-    document.getElementById('result').innerHTML = 'Tie'
+    document.getElementById('result').innerHTML = 'Result: Tie'
   } else if (roundChoice == 'scissors') {
     score++
-    document.getElementById('result').innerHTML = 'Win'
+    document.getElementById('result').innerHTML = 'Result: Win'
   } else if (roundChoice == 'paper') {
     score--
-    document.getElementById('result').innerHTML = 'Lose'
+    document.getElementById('result').innerHTML = 'Result: Lose'
   }
-  document.getElementById('player-score').innerHTML = score
-    document.getElementById('hands').innerHTML = handsCount++
+  document.getElementById('player-score').innerHTML = `Score: ${score}`
+  document.getElementById('hands').innerHTML = `Number of hands: ${handsCount++}`
 }
 
 function paperClick() {
   let roundChoice = randomSelect(computerChoices)
   if (roundChoice == 'rock') {
     score++
-    document.getElementById('result').innerHTML = 'Win'
+    document.getElementById('result').innerHTML = 'Result: Win'
   } else if (roundChoice == 'scissors') {
     score--
-    document.getElementById('result').innerHTML = 'Lose'
+    document.getElementById('result').innerHTML = 'Result: Lose'
   } else if (roundChoice == 'paper') {
-    document.getElementById('result').innerHTML = 'Tie'
+    document.getElementById('result').innerHTML = 'Result: Tie'
   }
-  document.getElementById('player-score').innerHTML = score
-    document.getElementById('hands').innerHTML = handsCount++
+  document.getElementById('player-score').innerHTML = `Score: ${score}`
+  document.getElementById('hands').innerHTML = `Number of hands: ${handsCount++}`
 }
 
 function scissorsClick() {
   let roundChoice = randomSelect(computerChoices)
   if (roundChoice == 'rock') {
     score--
-    document.getElementById('result').innerHTML = 'Lose'
+    document.getElementById('result').innerHTML = 'Result: Lose'
   } else if (roundChoice == 'scissors') {
-    document.getElementById('result').innerHTML = 'Tie'
+    document.getElementById('result').innerHTML = 'Result: Tie'
   } else if (roundChoice == 'paper') {
     score++
-    document.getElementById('result').innerHTML = 'Win'
+    document.getElementById('result').innerHTML = 'Result: Win'
   }
-  document.getElementById('player-score').innerHTML = score
-  document.getElementById('hands').innerHTML = handsCount++
+  document.getElementById('player-score').innerHTML = `Score: ${score}`
+  document.getElementById('hands').innerHTML = `Number of hands: ${handsCount++}`
 }
 
 function endGame() {
