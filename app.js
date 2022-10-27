@@ -30,9 +30,9 @@
 
 // Arrays
 
-const fruits = ['apple', 'strawberry', 'banana', 'orange']
-
-fruits.push('watermelon', 'mango')
+// const fruits = ['apple', 'strawberry', 'banana', 'orange']
+//
+// fruits.push('watermelon', 'mango')
 
 //console.log(fruits.slice(3, 5))
 
@@ -67,42 +67,42 @@ fruits.push('watermelon', 'mango')
 // }
 //
 //
-let numbers = []
+// let numbers = []
+// //
+// // let sum = 0
+// // let doubles = []
+// // for (num of numbers) {
+// // //  sum = sum + num
+// //   doubles.push(num * 2)
+// //
+// // }
+// let greaterThanArray = []
 //
-// let sum = 0
-// let doubles = []
-// for (num of numbers) {
-// //  sum = sum + num
-//   doubles.push(num * 2)
-//
+// const filter = (testArray, greaterThan) => {
+//   for (const num of testArray) {
+//     if (num > greaterThan) {
+//       greaterThanArray.push(num)
+//     }
+//   }
+//   return greaterThanArray
 // }
-let greaterThanArray = []
-
-const filter = (testArray, greaterThan) => {
-  for (const num of testArray) {
-    if (num > greaterThan) {
-      greaterThanArray.push(num)
-    }
-  }
-  return greaterThanArray
-}
-
-
-const doubles = (numbers) => {
-  return numbers.map(number => number * 2)
-}
-
-function arrayInput() {
-  let newVar = prompt('Give me a number')
-  let newNum = parseInt(newVar)
-  if (Number.isInteger(newNum)) {
-    numbers.push(newNum)
-    arrayInput()
-  } else  {
-    result = numbers.filter(num => num > 6 || num < 2)
-
-  }
-}
+//
+//
+// const doubles = (numbers) => {
+//   return numbers.map(number => number * 2)
+// }
+//
+// function arrayInput() {
+//   let newVar = prompt('Give me a number')
+//   let newNum = parseInt(newVar)
+//   if (Number.isInteger(newNum)) {
+//     numbers.push(newNum)
+//     arrayInput()
+//   } else  {
+//     result = numbers.filter(num => num > 6 || num < 2)
+//
+//   }
+//}
 
 //arrayInput();
 //console.log(result)
@@ -187,64 +187,96 @@ function arrayInput() {
 //
 //
 
-function mult(a, b) {
-  return a * b;
+// function mult(a, b) {
+//   return a * b;
+// }
+//
+// const nums = [1, 2, 3, 4]
+// // const result = nums.reduce(mult)
+//
+// const result = nums.reduce((a, b) => a + b, 0)
+//
+//
+// const actors = [
+//   {name: 'johnny', netWorth: 200},
+//   {name: 'amber', netWorth: 10},
+//   {name: 'leo', netWorth: 1000}
+// ]
+//
+// const total = actors.reduce((a, b) => a + b.netWorth, 0)
+//
+// //console.log(total)
+//
+// let titleDiv = document.getElementById('title')
+// let message = 'goodbye'
+//
+// titleDiv.innerText = message;
+//
+// titleDiv.innerHTML = `<p>${message}</p>`
+//
+// titleDiv.style.color = 'green'
+//
+// let redSquare = document.getElementById('red')
+// let yellowSquare = document.getElementById('yellow')
+// let greenSquare = document.getElementById('green')
+//
+//
+// const squares = document.querySelectorAll('.colorSquare')
+// const startStop = document.getElementById('startStop')
+//
+// function clicked() {
+//   let count = 0;
+//   count++;
+//   return count;
+// }
+//
+// const timesClicked = {'red': 0, 'yellow': 0, 'green': 0}
+//
+// squares.forEach(square => {
+//   square.onclick = () => {
+//     timesClicked[square.value] += 1
+//     square.innerText = timesClicked[square.value]
+// //    console.log(square.value)
+//   }
+// })
+//
+// startStop.onclick = () => clearScores()
+//
+// function clearScores() {
+//   timesClicked.red = 0
+//   timesClicked.yellow = 0
+//   timesClicked.green = 0
+//   squares.forEach(square => square.innerText = '')
+// }
+
+const randomSelect = (myArray) => {
+  let randomChoice = Math.floor(Math.random() * (myArray.length))
+
+  console.log(myArray[randomChoice])
 }
 
-const nums = [1, 2, 3, 4]
-// const result = nums.reduce(mult)
+fruits = ['banana', 'appple', 'orange', 'pear']
 
-const result = nums.reduce((a, b) => a + b, 0)
+//rainy (1), sunny (-1) overcast (0)
 
-
-const actors = [
-  {name: 'johnny', netWorth: 200},
-  {name: 'amber', netWorth: 10},
-  {name: 'leo', netWorth: 1000}
-]
-
-const total = actors.reduce((a, b) => a + b.netWorth, 0)
-
-//console.log(total)
-
-let titleDiv = document.getElementById('title')
-let message = 'goodbye'
-
-titleDiv.innerText = message;
-
-titleDiv.innerHTML = `<p>${message}</p>`
-
-titleDiv.style.color = 'green'
-
-let redSquare = document.getElementById('red')
-let yellowSquare = document.getElementById('yellow')
-let greenSquare = document.getElementById('green')
-
-
-const squares = document.querySelectorAll('.colorSquare')
-const startStop = document.getElementById('startStop')
-
-function clicked() {
+const weatherScore = () => {
   let count = 0;
-  count++;
-  return count;
-}
-
-const timesClicked = {'red': 0, 'yellow': 0, 'green': 0}
-
-squares.forEach(square => {
-  square.onclick = () => {
-    timesClicked[square.value] += 1
-    square.innerText = timesClicked[square.value]
-//    console.log(square.value)
+  let forecast = prompt('What is your forecast?')
+  if (forecast == 'rainy') {
+    count++
+    weatherScore()
+  } else if (forecast == 'sunny') {
+    count--
+    weatherScore()
+  } else if (forecast == 'overcast') {
+    weatherScore()
+  } else if (forecast == 'exit') {
+    return count
+  } else if (forecast !== 'exit' && forecast !== 'sunny' && forecast !== 'rainy' && forecast !== 'overcast') {
+    alert('Not a valid forecast')
+    weatherScore()
   }
-})
-
-startStop.onclick = () => clearScores()
-
-function clearScores() {
-  timesClicked.red = 0
-  timesClicked.yellow = 0
-  timesClicked.green = 0
-  squares.forEach(square => square.innerText = '')
+  console.log(count)
 }
+
+weatherScore()
