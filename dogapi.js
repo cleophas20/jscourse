@@ -1,9 +1,14 @@
 // https://dog.ceo/api/breeds/image/random
 
-fetch('https://dog.ceo/api/breeds/image/random')
-  .then(response => response.json())
-  .then(json => {
-    console.log(json)
-  })
+const doggy = document.getElementById('dogImage')
+const newDog = document.getElementById('dogButton')
 
-console.log('run 3rd')
+const getNewDog = () => {
+  fetch('https://dog.ceo/api/breeds/image/random')
+    .then(response => response.json())
+    .then(json => {
+      doggy.innerHTML = `<img src='${json.message}'/>`
+    })
+}
+
+newDog.onclick = () => getNewDog()
